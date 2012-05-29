@@ -33,3 +33,9 @@ void LpelBiSemaSignal(lpel_bisema_t *sem)
   /* This simply writes 0 */
   __sync_lock_release(&sem->counter);
 }
+
+/** Return the number of currently waiting tasks on the semaphore */
+int LpelBiSemaCountWaiting(lpel_bisema_t *sem)
+{
+  return sem->counter;
+}

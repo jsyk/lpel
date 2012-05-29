@@ -277,4 +277,10 @@ void LpelBiSemaWait(lpel_bisema_t *sem);
 /** Signal the semaphore, possibly releasing a waiting task. */
 void LpelBiSemaSignal(lpel_bisema_t *sem);
 
+#if 1
+#define LPEL_HAS_BISEMA_COUNT_WAITING
+/** Return the number of currently waiting tasks on the semaphore */
+int LpelBiSemaCountWaiting(lpel_bisema_t *sem);
+#endif
+
 #endif /* _LPEL_H_ */
